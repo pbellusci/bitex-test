@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import storage from "../../firebase";
-import { Col } from "react-bootstrap";
+import { Col, ProgressBar } from "react-bootstrap";
+import "./index.css";
 
 class ImageUpload extends Component {
 	constructor(props) {
@@ -32,7 +33,8 @@ class ImageUpload extends Component {
 				// Upload complete
 				let $url = await task.snapshot.metadata.ref.getDownloadURL();
 				this.setState({
-					picture: $url
+					picture: $url,
+					uploadValue: 0
 				});
 			}
 		);
@@ -40,15 +42,39 @@ class ImageUpload extends Component {
 
 	render() {
 		return (
-			<Col xs='12'>
-				<progress value={this.state.uploadValue} max='100'>
-					{this.state.uploadValue} %
-				</progress>
-				<br />
-				<input type='file' onChange={this.handleOnChange.bind(this)} />
-				<br />
-				<img width='90' alt='123' title='123' src={this.state.picture} />
-			</Col>
+			<div className='no-gutters'>
+				<Col xs='12' className='custom-file'>
+					<input
+						type='file'
+						id='customFile'
+						className='custom-file-input'
+						onChange={this.handleOnChange.bind(this)}
+					/>
+					<label class='custom-file-label'></label>
+				</Col>
+
+				<Col xs='12' className='progress-wrapper'>
+					{this.state.uploadValue > 0 && (
+						<ProgressBar
+							animated
+							label
+							max='100'
+							now={this.state.uploadValue}
+						/>
+					)}
+				</Col>
+
+				{this.state.picture !== "" && (
+					<Col xs='12' className='dni-img-wrapper'>
+						<img
+							alt='DNI Prueba'
+							title='DNI Prueba'
+							className='mx-auto d-block img-fluid'
+							src={this.state.picture}
+						/>
+					</Col>
+				)}
+			</div>
 		);
 	}
 }

@@ -86,6 +86,7 @@ class UserDataForm extends Component {
 
 				<Form.Row>
 					<Form.Group as={Col} controlId='imageUpload'>
+						<Form.Label>Subi una foto de tu DNI</Form.Label>
 						<ImageUpload />
 					</Form.Group>
 				</Form.Row>
@@ -114,6 +115,18 @@ class UserDataForm extends Component {
 					<Form.Group as={Col} controlId='formGridZip'>
 						<Form.Label>C.P / Zip</Form.Label>
 						<Form.Control />
+					</Form.Group>
+				</Form.Row>
+
+				<Form.Row>
+					<Form.Group as={Col} controlId='imageUpload'>
+						<Form.Label>
+							Subi una prueba de tu Domicilio{" "}
+							<small>
+								<i>(Puede ser servicio, copia de resumen de tarjeta, etc..)</i>
+							</small>
+						</Form.Label>
+						<ImageUpload />
 					</Form.Group>
 				</Form.Row>
 

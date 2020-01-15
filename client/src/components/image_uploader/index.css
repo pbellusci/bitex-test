@@ -1,0 +1,9 @@
+.progress-wrapper {
+	margin-top: 10px;
+}
+
+.dni-img-wrapper {
+	max-height: 400px;
+	overflow-y: auto;
+	border: 1px solid rgb(206, 212, 218);
+}
