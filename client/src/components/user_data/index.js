@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { Col } from "react-bootstrap";
-import UserData from "../user_data";
+import UserDataForm from "./form";
 
-class Home extends Component {
+class UserData extends Component {
 	render() {
 		return (
 			<Col xs='12'>
-				<h1> HOME </h1>
-				<UserData />
+				<h1> User Data </h1>
+				<UserDataForm />
 			</Col>
 		);
 	}
 }
-export default Home;
+export default UserData;
