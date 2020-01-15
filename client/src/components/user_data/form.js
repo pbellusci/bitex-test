@@ -4,7 +4,7 @@ import Datepicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./index.css";
 import axios from "axios";
-
+import ImageUpload from "../image_uploader";
 /*- Nombre y apellido
 - Fecha de nacimiento.
 - Nacionalidad
@@ -81,6 +81,12 @@ class UserDataForm extends Component {
 					<Form.Group as={Col} controlId='dni'>
 						<Form.Label>DNI</Form.Label>
 						<Form.Control type='text' placeholder='...' />
+					</Form.Group>
+				</Form.Row>
+
+				<Form.Row>
+					<Form.Group as={Col} controlId='imageUpload'>
+						<ImageUpload />
 					</Form.Group>
 				</Form.Row>
 
